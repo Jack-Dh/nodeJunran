@@ -44,5 +44,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
+app.listen(2323,()=>{
+    console.log('启动成功，端口80')
+})
 module.exports = app;
