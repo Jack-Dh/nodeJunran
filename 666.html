@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function runAsync(){
+            var p = new Promise(function(resolve, reject){
+                //做一些异步操作
+                console.log('执行完成');
+                resolve('随便什么数据');
+                // setTimeout(function(){
+                //     console.log('执行完成');
+                //     resolve('随便什么数据');
+                // }, 2000);
+            });
+            return p;
+        }
+        runAsync().then(data=>{
+            console.log(data)
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
