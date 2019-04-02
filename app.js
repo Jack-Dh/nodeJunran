@@ -4,12 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login')
 
+
 const bodyParser = require('body-parser');
 var app = express();
+
+
+
+
+
 
 
 /* 解析post请求*/
@@ -44,7 +52,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-app.listen(2323,()=>{
-    console.log('启动成功，端口80')
+app.listen(3000,()=>{
+    console.log('启动成功，端口3000')
 })
 module.exports = app;

@@ -2,56 +2,60 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        script(src='/javascripts/jquery-3.2.1.js')
+        //link(rel='stylesheet', href='/stylesheets/style.css')
+        //script(src='/javascripts/jquery-3.2.1.js')
     body
-        form(action="/login" method="post" id='asc')
+        form(action="/login/upload" method="post" enctype="multipart/form-data")
+         input(type="file" name="logo")
+         input(type="submit" value="提交")
 
-         input(name="username")
-         input(name="password")
-         input(type="submit" value="提交" )
-    script.
-     $(function () {
-
-        $("form").submit(function () {
-            var first = $("input[name='username']").val();
-            var last = $("input[name='password']").val();
-
-            // if (first == "" || first == null || first == undefined) {
-            //     alert("first");
-            //     return false;
-            //     /*阻止表单提交*/
-            // } else if (last == "" || last == null || last == undefined) {
-            //     alert("last");
-            //     return false;
-            //     /*阻止表单提交*/
-            // } else {
-            //     alert("提交");
-            //     return true;
-             // }
-           })
-
-
-            // $.ajax({
-            //     url:'192.168.1.186:3000/login',
-            //     data:data,
-            //     type:'post',
-            //     contentype:'application/json',
-            //     success:function () {
-            //         console.log(1)
-            //
-            //     }
-            //
-            // })
-
-
-
-
-
-
-
-
-     })
+        //form(action="/login" method="post" id='asc')
+        //
+        // input(name="username")
+        // input(name="password")
+        // input(type="submit" value="提交" )
+    //script.
+    // $(function () {
+    //
+    //    $("form").submit(function () {
+    //        var first = $("input[name='username']").val();
+    //        var last = $("input[name='password']").val();
+    //
+    //        // if (first == "" || first == null || first == undefined) {
+    //        //     alert("first");
+    //        //     return false;
+    //        //     /*阻止表单提交*/
+    //        // } else if (last == "" || last == null || last == undefined) {
+    //        //     alert("last");
+    //        //     return false;
+    //        //     /*阻止表单提交*/
+    //        // } else {
+    //        //     alert("提交");
+    //        //     return true;
+    //         // }
+    //       })
+    //
+    //
+    //        // $.ajax({
+    //        //     url:'192.168.1.186:3000/login',
+    //        //     data:data,
+    //        //     type:'post',
+    //        //     contentype:'application/json',
+    //        //     success:function () {
+    //        //         console.log(1)
+    //        //
+    //        //     }
+    //        //
+    //        // })
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // })
 
 
 
