@@ -3,7 +3,7 @@ let router = express.Router()
 const mysql = require('mysql')
 const utility = require('utility')
 const sd = require('silly-datetime')
-
+const os=require('os')
 // let bodyParser=require('body-parser')
 //
 // router.use(bodyParser.json());
@@ -24,12 +24,15 @@ router.post('/upload', upload.single('logo'), function (req, res, next) {
             return res.status(200).json({code: 1, message: '添加失败！'})
         } else {
             let imgMint=req.file.originalname.substr(req.file.originalname.indexOf('.'))
-            console.log(imgMint)
-            return res.status(200).json({code: 1, message: '添加成功！',url:`http://192.168.1.179:/Image/${req.file.filename}${imgMint}`})
+            var networkInterfaces=os.networkInterfaces();
+            var ip=networkInterfaces['本地连接'][1].address;
+            return res.status(200).json({code: 1, message: '添加成功！',url:`${ip}:/Image/${req.file.filename}${imgMint}`})
         }
         res.end();
     })
     console.log(req.file)
+
+
 
 });
 
